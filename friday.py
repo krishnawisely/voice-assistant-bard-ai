@@ -46,7 +46,7 @@ def send_request_to_board_ai(text_input):
         "prompt": { "text" : text_input}
     }
 
-    response = requests.post("https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key=AIzaSyDN3tPXQcg661qSELSSD3pHnxSPwbqw8oc", headers=headers, data=json.dumps(data))
+    response = requests.post("https://generativelanguage.googleapis.com/v1beta3/models/text-bison-001:generateText?key={YOUR_API_KEY}", headers=headers, data=json.dumps(data))
 
     if response.status_code == 200:
         response_json = json.loads(response.text)
